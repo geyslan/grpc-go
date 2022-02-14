@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "github.com/geyslan/grpc-go/proto";
+
+package proto;
+
+message CalculationRequest {
+        string operator = 1;
+        string value1 = 2;
+        string value2 = 3;
+}
+
+message CalculationReply {
+        string result = 1;
+}
+
+service Calculation {
+        rpc CalculateValues (CalculationRequest) returns (CalculationReply) {}
+}
